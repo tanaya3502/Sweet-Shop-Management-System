@@ -1,5 +1,6 @@
-# Sweet-Shop-Management-System
-Sweet Shop Management System is a full-stack SPA using React and Spring Boot. Users can register, login, view sweets, and purchase, while admins manage inventory. JWT authentication and role-based access ensure security, with MySQL storing persistent user and sweet data.
+# Sweet-Shop-Management-System  
+  
+The Sweet Shop Management System is a full-stack web application designed to streamline sweet inventory management and sales. Built with React for the frontend and Spring Boot for the backend, the system allows users to register, login, view available sweets, and make purchases, while administrators have full control to add, update, delete, and restock sweets. The application uses JWT-based authentication and role-based access control to ensure secure operations, and a MySQL database stores persistent user and sweet data. It demonstrates a modern single-page application (SPA) architecture with a clean separation of concerns, including controllers, services, repositories, and secure API endpoints.  
 
 ## Project Overview  
 The Sweet Shop Management System is a full-stack web application built with React (frontend) and Spring Boot (backend). It allows:  
@@ -138,17 +139,17 @@ Sweet_Shop_Management_System/
 •  **jjwt (Java JWT) or spring-security-jwt →** JWT token generation & parsing  
 
 ### API Endpoints (Module-wise)
-** Authentication Module **  
+**Authentication Module**  
     - POST /api/auth/register → Register a new user (USER by default)  
     - POST /api/auth/login → Authenticate user and return JWT  
-** Sweet Management Module ** 
+**Sweet Management Module** 
     - POST /api/sweets → (Admin) Add a new sweet  
     - GET /api/sweets → List all sweets  
     - GET /api/sweets/{id} → Get details of one sweet  
     - GET /api/sweets/search?name=Chocolate → Search sweets by category  
     - PUT /api/sweets/{id} → (Admin) Update sweet details  
     - DELETE /api/sweets/{id} → (Admin) Delete sweet  
-** Inventory Management Module **  
+**Inventory Management Module**  
     - POST /api/sweets/{id}/purchase → (User) Purchase a sweet (quantity--)  
     - POST /api/sweets/{id}/restock → (Admin) Restock a sweet (quantity++)  
 
@@ -161,13 +162,13 @@ Sweet_Shop_Management_System/
 - jwt-decode → Decode JWT to extract role/username if needed  
 
 ### Frontend Modules
-** Authentication (Login & Register) **  
+**Authentication (Login & Register)**  
 - Login Page  
 - Form: username/email, password  
 - API: POST /api/auth/login → returns {token, role}  
 - Store token in localStorage & role in AuthContext  
     
-*** Redirect: ***  
+***Redirect:***  
 - Admin → Admin Page 
 - User → Dashboard  
 - Register Page  
@@ -175,7 +176,7 @@ Sweet_Shop_Management_System/
 - API: POST /api/auth/register  
 - Only normal users register (admins seeded manually in DB)  
 
-** Dashboard (User & Admin) **  
+**Dashboard (User & Admin)**  
 - Shared dashboard for both roles:  
         - API: GET /api/sweets → list sweets  
         - API: GET /api/sweets/search → search sweets by name/category/price  
@@ -183,7 +184,7 @@ Sweet_Shop_Management_System/
 - Normal user → can purchase (POST /api/sweets/:id/purchase)  
 - Purchase button disabled if stock = 0  
 
-** Admin Page **  
+**Admin Page**  
 - Role: Admin only (frontend route protection + backend role check)  
 APIs:  
 - POST /api/sweets → add sweet  

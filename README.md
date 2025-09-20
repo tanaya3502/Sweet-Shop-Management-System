@@ -2,8 +2,10 @@
   
 The Sweet Shop Management System is a full-stack web application designed to streamline sweet inventory management and sales. Built with React for the frontend and Spring Boot for the backend, the system allows users to register, login, view available sweets, and make purchases, while administrators have full control to add, update, delete, and restock sweets. The application uses JWT-based authentication and role-based access control to ensure secure operations, and a MySQL database stores persistent user and sweet data. It demonstrates a modern single-page application (SPA) architecture with a clean separation of concerns, including controllers, services, repositories, and secure API endpoints.  
 
-***Test Report : https://docs.google.com/document/d/1Quuh616TqwZkaGuyPp9fi30FO3LLCCyx/edit?usp=sharing&ouid=116060729193506149296&rtpof=true&sd=true***
-
+***Test Report : https://docs.google.com/document/d/1Quuh616TqwZkaGuyPp9fi30FO3LLCCyx/edit?usp=sharing&ouid=116060729193506149296&rtpof=true&sd=true***  
+  
+***Application Screenshorts : https://docs.google.com/document/d/1eYmslLgjLAVuiCw6-_pyCD6U9Qyrjfi_/edit?usp=sharing&ouid=116060729193506149296&rtpof=true&sd=true***  
+  
 ## Project Overview  
 The Sweet Shop Management System is a full-stack web application built with React (frontend) and Spring Boot (backend). It allows:  
 •	Users to register, login, and purchase sweets.  
@@ -192,9 +194,19 @@ APIs:
 - POST /api/sweets → add sweet  
 - PUT /api/sweets/:id → update sweet  
 - DELETE /api/sweets/:id → delete sweet  
-- POST /api/sweets/:id/restock → restock sweet  
+- POST /api/sweets/:id/restock → restock sweet
 
-### How to Use  
+## Testing  
+Testing APIs  
+•	Use Postman for testing backend endpoints  
+•	Ensure JWT is added in Authorization: Bearer <token> header for protected APIs  
+•	Positive & Negative test cases implemented:  
+  - Register/Login  
+  - CRUD sweets  
+  - Purchase & Restock  
+  - Role-based access  
+
+## How to Use  
 - Register: Create a new user account  
 - Login: Log in with your credentials to receive a JWT token  
 - Browse Sweets: View all available sweets on the dashboard  
@@ -219,5 +231,23 @@ APIs:
 - React: Used to build the frontend and create a smooth user interface 
 - MySQL: Used as the relational database to store users, sweets, and inventory data  
 - Postman: Used to test APIs during development  
-- Axios: Used in React for making secure API calls to the backend  
+- Axios: Used in React for making secure API calls to the backend
 
+## Key Points  
+•	All passwords are hashed using BCrypt  
+•	JWT tokens include role and expire after a set time  
+•	Admin-only endpoints are protected both in backend (@PreAuthorize) and frontend (UI + route guards)  
+•	Transactional operations (purchase/restock) prevent race conditions   
+  
+
+My AI Usage:   
+  
+For this project, I leveraged AI tools to assist with certain parts of the development process:  
+1.	Frontend (React SPA & JWT Integration):   
+•	I have strong experience with backend development and also knowledge of frontend (HTML, CSS, JS for validation), but only basic knowledge of frontend frameworks  
+•	I used ChatGPT to help implement the connection between the Spring Boot backend and the React frontend, including sending JWT tokens, protecting routes, and managing role-based UI  
+•	It also assisted in structuring components, handling state, and creating forms for login, registration, and dashboard functionality  
+2.	Report Generation / Documentation:  
+•	ChatGPT helped draft structured test cases, project workflow, and detailed README sections  
+•	It assisted in organizing information, summarizing modules, and formatting the documentation to make it clear and professional  
+Reflection: Using AI significantly accelerated frontend development, helped me bridge gaps in framework-specific knowledge, and allowed me to focus on securely integrating backend functionality while maintaining a clean and functional UI  

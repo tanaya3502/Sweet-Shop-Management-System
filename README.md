@@ -2,6 +2,8 @@
   
 The Sweet Shop Management System is a full-stack web application designed to streamline sweet inventory management and sales. Built with React for the frontend and Spring Boot for the backend, the system allows users to register, login, view available sweets, and make purchases, while administrators have full control to add, update, delete, and restock sweets. The application uses JWT-based authentication and role-based access control to ensure secure operations, and a MySQL database stores persistent user and sweet data. It demonstrates a modern single-page application (SPA) architecture with a clean separation of concerns, including controllers, services, repositories, and secure API endpoints.  
 
+***Test Report : https://docs.google.com/document/d/1Quuh616TqwZkaGuyPp9fi30FO3LLCCyx/edit?usp=sharing&ouid=116060729193506149296&rtpof=true&sd=true***
+
 ## Project Overview  
 The Sweet Shop Management System is a full-stack web application built with React (frontend) and Spring Boot (backend). It allows:  
 •	Users to register, login, and purchase sweets.  
